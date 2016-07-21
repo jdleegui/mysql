@@ -1,7 +1,7 @@
 # mysql
 ## Reference
 - Add mysql jar using the Maven (pom.xml)
- [ http://stackoverflow.com/questions/15561038/can-i-install-the-mysql-jdbc-connector-using-mvn-installinstall-file ] ( http://stackoverflow.com/questions/15561038/can-i-install-the-mysql-jdbc-connector-using-mvn-installinstall-file )
+- [ http://stackoverflow.com/questions/15561038/can-i-install-the-mysql-jdbc-connector-using-mvn-installinstall-file ] ( http://stackoverflow.com/questions/15561038/can-i-install-the-mysql-jdbc-connector-using-mvn-installinstall-file )
 ```
  <dependency>
   <groupId>mysql</groupId>
@@ -10,7 +10,7 @@
  </dependency>
 ```
 - Read data from dbms
- [sample code]( http://www.tutorialspoint.com/jdbc/jdbc-sample-code.htm )
+- [ http://www.tutorialspoint.com/jdbc/jdbc-sample-code.htm ] [sample code]( http://www.tutorialspoint.com/jdbc/jdbc-sample-code.htm )
 
 // http://hyeonstorage.tistory.com/112
 // writing 
