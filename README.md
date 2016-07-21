@@ -10,10 +10,8 @@
  </dependency>
 ```
 - Read data from dbms
-- [ http://www.tutorialspoint.com/jdbc/jdbc-sample-code.htm ] [sample code]( http://www.tutorialspoint.com/jdbc/jdbc-sample-code.htm )
-
-// http://hyeonstorage.tistory.com/112
-// writing 
+- [ get : http://www.tutorialspoint.com/jdbc/jdbc-sample-code.htm ] ( http://www.tutorialspoint.com/jdbc/jdbc-sample-code.htm ) 
+- [ set : http://hyeonstorage.tistory.com/112 ] ( http://hyeonstorage.tistory.com/112 )
 ## Push
 ```
 echo "# mysql" >> README.md
