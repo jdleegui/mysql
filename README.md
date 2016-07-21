@@ -10,6 +10,7 @@
  </dependency>
 ```
 - Read data from dbms
+- [ mysql : http://www.vogella.com/tutorials/MySQLJava/article.html ] (http://www.vogella.com/tutorials/MySQLJava/article.html)
 - [ get : http://www.tutorialspoint.com/jdbc/jdbc-sample-code.htm ] ( http://www.tutorialspoint.com/jdbc/jdbc-sample-code.htm ) 
 - [ set : http://hyeonstorage.tistory.com/112 ] ( http://hyeonstorage.tistory.com/112 )
 - [ search : https://www.google.co.kr/?gfe_rd=cr&ei=bu-GV_26F4jD8Af5867wCg&gws_rd=ssl#q=java+mysql+connection+example+code ] ( https://www.google.co.kr/?gfe_rd=cr&ei=bu-GV_26F4jD8Af5867wCg&gws_rd=ssl#q=java+mysql+connection+example+code )
