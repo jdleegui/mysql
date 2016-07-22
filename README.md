@@ -10,6 +10,7 @@
  </dependency>
 ```
 - Read data from dbms
+- [ RegisterProvider ] (https://git.opendaylight.org/gerrit/gitweb?p=controller.git;a=blob;f=opendaylight/md-sal/sal-binding-it/src/test/java/org/opendaylight/controller/test/sal/binding/it/RoutedServiceTest.java;h=d49d6f0e25e271e43c8550feb5eef63d96301184;hb=HEAD)
 - [ mysql : http://www.vogella.com/tutorials/MySQLJava/article.html ] (http://www.vogella.com/tutorials/MySQLJava/article.html)
 - [ get : http://www.tutorialspoint.com/jdbc/jdbc-sample-code.htm ] ( http://www.tutorialspoint.com/jdbc/jdbc-sample-code.htm ) 
 - [ set : http://hyeonstorage.tistory.com/112 ] ( http://hyeonstorage.tistory.com/112 )
