@@ -16,69 +16,71 @@ import java.sql.Statement;
 	
 public class JdbcTest {
 
-	public JdbcTest(String host, String user, String pass) {
-		// TODO_Auto-generated constructor stub
-		Connection conn = null;
-		Statement stmt = null;
-		PreparedStatement pstmt = null;
+	private Connection conn = null;
+	private Statement stmt = null;
+	private PreparedStatement pstmt = null;
+	private ResultSet rs = null;
 
+	public JdbcTest(String host, Integer port, String user, String pass) {
+	
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			System.out.println("Connecting to database...");
-			String db_url = "jdbc:mysql://" + host + ":3306/NetMngr";
+			String db_url = "jdbc:mysql://" + host + ":"+port+"/NetMngr"; 
 			conn = DriverManager.getConnection(db_url, user, pass);
-			System.out.println("Creating statement...");
-
-			stmt = conn.createStatement();
-			String rsql = "select id, section, entry, value from config";
-			ResultSet rs = stmt.executeQuery(rsql);
-
-			while (rs.next()) {
-				System.out.printf("%-10s,%-10s,%-10s,%-10s\n",
-					rs.getString("id"), 
-					rs.getString("section"),
-					rs.getString("entry"), 
-					rs.getString("value"));
+ 
+			stmt = conn.createStatement(); 
+			rs = stmt.executeQuery("select id as c1, section as c2, entry as c3, value as c4 from config");
+			while (rs.next()) { 
+				System.out.printf("%-10s,%-10s,%-10s,%-10s\n", rs.getString("c1"), rs.getString("c2"), rs.getString("c3"), rs.getString("c4")); 
 			}
 
-			String wsql = "insert into config values(?,?,?,?)";
-			pstmt = conn.prepareStatement(wsql);
-			pstmt.setString(1,"j");
-			pstmt.setString(2,"j");
-			pstmt.setString(3,"j");
-			pstmt.setString(4,"j");
+			try {
+				stmt.executeUpdate("delete from config where id = 'j'");
+				stmt.executeUpdate("delete from config where id = 'e'");			
+			} catch (SQLException e) {  
+				e.printStackTrace(); 
+			}
+			
+			pstmt = conn.prepareStatement("insert into config values(?,?,?,?)"); 
+			pstmt.setString(1,"j"); 
+			pstmt.setString(2,"j"); 
+			pstmt.setString(3,"j"); 
+			pstmt.setString(4,"j"); 
 			pstmt.executeUpdate();
-
-			String dsql = "delete from config where id = 'j'";
-			stmt.executeUpdate(dsql);
-
-			rs.close();
-			stmt.close();
-			conn.close();
+			
+			pstmt = conn.prepareStatement("select id as c1, section as c2, entry as c3, value as c4 from config where id = 'j'");
+			rs = pstmt.executeQuery();
+			while (rs.next()) { 
+				System.out.printf("%-10s,%-10s,%-10s,%-10s\n", rs.getString("c1"), rs.getString("c2"), rs.getString("c3"), rs.getString("c4")); 
+			}
+			
+			pstmt = conn.prepareStatement("delete from config where id = ?;");
+			pstmt.setString(1, "j");
+			pstmt.executeUpdate();
+			
 		} catch (SQLException e) {
-			// TODO_Auto-generated catch block
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO_Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			// finally block used to close resources
+
 			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (pstmt != null) {
+					pstmt.close();
+				}
 				if (stmt != null) {
 					stmt.close();
-				}
-				if (pstmt != null)
-				{
-					pstmt.close();
 				}
 				if (conn != null) {
 					conn.close();
 				}
-			} catch (SQLException e) {
-				// e.printStackTrace();
-			} // nothing we can do
-		} // end try
-		System.out.println("End of Read!");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}			
    
 	}
 

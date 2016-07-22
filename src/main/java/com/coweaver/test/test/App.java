@@ -6,12 +6,20 @@ package com.coweaver.test.test;
  */
 public class App 
 {
-	final private static String host = "192.168.123.117";
-	final private static String user = "root";
-	final private static String pass = "root";
-	
     public static void main( String[] args )
     {
-        new JdbcTest(host, user, pass);
+    	final String host = "192.168.123.117"; 
+    	final String user = "root"; 
+    	final String pass = "root";
+    	final Integer port = 3306;
+    	
+    	new JdbcTest(host, port, user, pass);
+		JdbcConfig jcfg = new JdbcConfig(host, port, user, pass);
+		if (jcfg != null)
+		{
+			CConfig cfg = new CConfig(user, jcfg);
+			cfg.load();
+			jcfg.Close();
+		}   	
     }
 }
