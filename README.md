@@ -10,6 +10,10 @@
  </dependency>
 ```
 - Read data from dbms
+- [ Context ] ( https://developer.cisco.com/media/mdsal/sal-binding-api/site/apidocs/org/opendaylight/controller/sal/binding/api/RpcProviderRegistry.html )
+- [ Context ] ( https://ask.opendaylight.org/question/297/what-are-the-implications-of-extcontext-instance-field-in-yang-files/ )
+- [ ROUTING ] ( https://ask.opendaylight.org/question/99/how-does-request-routing-works/ )
+- [ RPC ] ( https://github.com/opendaylight/docs/blob/master/manuals/developer-guide/src/main/asciidoc/controller/md-sal-rpc-routing.adoc )
 - [ RegisterProvider ] (https://git.opendaylight.org/gerrit/gitweb?p=controller.git;a=blob;f=opendaylight/md-sal/sal-binding-it/src/test/java/org/opendaylight/controller/test/sal/binding/it/RoutedServiceTest.java;h=d49d6f0e25e271e43c8550feb5eef63d96301184;hb=HEAD)
 - [ mysql : http://www.vogella.com/tutorials/MySQLJava/article.html ] (http://www.vogella.com/tutorials/MySQLJava/article.html)
 - [ get : http://www.tutorialspoint.com/jdbc/jdbc-sample-code.htm ] ( http://www.tutorialspoint.com/jdbc/jdbc-sample-code.htm ) 
